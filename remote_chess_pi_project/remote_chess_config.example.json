@@ -1,0 +1,29 @@
+{
+  "camera": {
+    "width": 960,
+    "height": 720,
+    "format": "RGB888",
+    "color_order": "BGR",
+    "jpeg_quality": 78,
+    "fps_delay_s": 0.08
+  },
+  "board": {
+    "rect": [120, 60, 720, 600],
+    "white_bottom": true,
+    "sample_margin_ratio": 0.25,
+    "draw_grid": true
+  },
+  "serial": {
+    "enabled": true,
+    "baud": 115200,
+    "port_candidates": ["/dev/ttyACM0", "/dev/ttyUSB0"],
+    "move_command_format": "MOVE {from_sq} {to_sq}",
+    "capture_remove_enabled": false,
+    "capture_command_format": "CAPTURE {to_sq}"
+  },
+  "stockfish": {
+    "path": "stockfish",
+    "skill_level": 6,
+    "movetime_ms": 700
+  }
+}

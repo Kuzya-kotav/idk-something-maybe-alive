@@ -1,0 +1,22 @@
+Raspberry Pi -> Arduino Mega protocol expected by remote_chess_pi.py
+
+Baud:
+115200
+
+Commands:
+PING              Arduino replies OK/PONG if available
+ZERO              Set current magnet/gantry position as A1/home
+POS               Ask current position if implemented
+MOVE E2 E4        Move piece from E2 to E4
+STOP              Stop movement
+
+Optional capture command if implemented:
+CAPTURE E4        Remove captured piece from E4 before MOVE
+
+The Python config controls command text:
+remote_chess_config.json:
+"serial": {
+  "move_command_format": "MOVE {from_sq} {to_sq}",
+  "capture_remove_enabled": false,
+  "capture_command_format": "CAPTURE {to_sq}"
+}
